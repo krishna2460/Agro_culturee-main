@@ -1,0 +1,37 @@
+[
+  {
+    "_id": {
+      "$oid": "b00b1024f65ddf234f343e8e"
+    },
+    "authorId": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "authorUsername": "ThePhenom",
+    "title": "First Blog",
+    "content": "<p>Its Awesome website<img alt=\"wink\" src=\"https://cdn.ckeditor.com/4.8.0/full/plugins/smiley/images/wink_smile.png\" style=\"height:23px; width:23px\" title=\"wink\" /></p>",
+    "likes": [
+      {
+        "userId": {
+          "$oid": "8fc9698e2c92b89db5453dd8"
+        },
+        "username": "ThePhenom"
+      }
+    ],
+    "comments": [
+      {
+        "_id": {
+          "$oid": "8b82c9acf00aee371baa1362"
+        },
+        "username": "ThePhenom",
+        "profilePic": "profile0.png",
+        "comment": "Mast yarr",
+        "createdAt": {
+          "$date": "2018-02-25T13:09:54.000Z"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2018-02-25T13:09:41.000Z"
+    }
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["farmerId", "name", "category", "price", "image", "reviews"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "farmerId": {
+        "bsonType": "objectId",
+        "description": "Must reference the _id of a user with 'farmer' role"
+      },
+      "name": {
+        "bsonType": "string",
+        "description": "Name of the product"
+      },
+      "category": {
+        "bsonType": "string",
+        "description": "Category of the product, e.g., Fruit, Vegetable, Grains"
+      },
+      "info": {
+        "bsonType": "string",
+        "description": "Detailed description of the product"
+      },
+      "price": {
+        "bsonType": ["int", "double", "decimal"],
+        "minimum": 0,
+        "description": "Price per unit of product"
+      },
+      "image": {
+        "bsonType": "string",
+        "description": "Filename or path to the product image"
+      },
+      "picStatus": {
+        "bsonType": "int",
+        "description": "Product image status code"
+      },
+      "reviews": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["_id", "name", "rating", "comment"],
+          "properties": {
+            "_id": {
+              "bsonType": "objectId"
+            },
+            "name": {
+              "bsonType": "string",
+              "description": "Name of the reviewer"
+            },
+            "rating": {
+              "bsonType": "int",
+              "minimum": 1,
+              "maximum": 5,
+              "description": "Rating out of 5"
+            },
+            "comment": {
+              "bsonType": "string",
+              "description": "Review comments text"
+            },
+            "createdAt": {
+              "bsonType": "date",
+              "description": "Timestamp when the review was written"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "_id": {
+      "$oid": "7acb7a7729c426027b475ecf"
+    },
+    "farmerId": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "name": "Mango",
+    "category": "Fruit",
+    "info": "<p>Mango raseela</p>",
+    "price": 500.0,
+    "image": "Mango3.jpeg",
+    "picStatus": 1,
+    "reviews": []
+  },
+  {
+    "_id": {
+      "$oid": "7d109eb66d953c0a9a4be19f"
+    },
+    "farmerId": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "name": "Ladyfinger",
+    "category": "Vegetable",
+    "info": "<p>Its veggie</p>",
+    "price": 1000.0,
+    "image": "Ladyfinger3.jpg",
+    "picStatus": 1,
+    "reviews": []
+  },
+  {
+    "_id": {
+      "$oid": "c782f29185e1325fbaf8d65a"
+    },
+    "farmerId": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "name": "Bajra",
+    "category": "Grains",
+    "info": "<p>bajre di rti</p>",
+    "price": 400.0,
+    "image": "Bajra3.jpg",
+    "picStatus": 1,
+    "reviews": []
+  },
+  {
+    "_id": {
+      "$oid": "aca5b00546113085a2eb4804"
+    },
+    "farmerId": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "name": "Banana",
+    "category": "Fruit",
+    "info": "<p>Jalgaon banana</p>",
+    "price": 400.0,
+    "image": "Banana3.jpg",
+    "picStatus": 1,
+    "reviews": []
+  }
+]

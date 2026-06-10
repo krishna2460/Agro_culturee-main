@@ -1,0 +1,85 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["buyerId", "shippingAddress", "products", "status", "createdAt"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "buyerId": {
+        "bsonType": "objectId",
+        "description": "Must reference the _id of the buyer placing the order"
+      },
+      "shippingAddress": {
+        "bsonType": "object",
+        "required": ["name", "addr", "city", "pincode", "mobile", "email"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Full name for shipping"
+          },
+          "addr": {
+            "bsonType": "string",
+            "description": "Street address for shipping"
+          },
+          "city": {
+            "bsonType": "string",
+            "description": "City name"
+          },
+          "pincode": {
+            "bsonType": "string",
+            "description": "Postal zip/pincode"
+          },
+          "mobile": {
+            "bsonType": "string",
+            "description": "Mobile contact for delivery"
+          },
+          "email": {
+            "bsonType": "string",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+            "description": "Email address for notifications"
+          }
+        }
+      },
+      "products": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["productId", "name", "price", "category", "quantity"],
+          "properties": {
+            "productId": {
+              "bsonType": "objectId",
+              "description": "References products._id (if still exists)"
+            },
+            "name": {
+              "bsonType": "string",
+              "description": "Snapshotted name of the product"
+            },
+            "price": {
+              "bsonType": ["int", "double", "decimal"],
+              "minimum": 0,
+              "description": "Snapshotted price per unit at checkout"
+            },
+            "category": {
+              "bsonType": "string",
+              "description": "Snapshotted category name"
+            },
+            "quantity": {
+              "bsonType": "int",
+              "minimum": 1,
+              "description": "Quantity purchased"
+            }
+          }
+        }
+      },
+      "status": {
+        "enum": ["pending", "processing", "shipped", "delivered", "cancelled"],
+        "description": "Current order fulfillment state"
+      },
+      "createdAt": {
+        "bsonType": "date",
+        "description": "Timestamp when transaction occurred"
+      }
+    }
+  }
+}

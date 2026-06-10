@@ -1,0 +1,78 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["role", "username", "email", "password", "mobile", "status", "profile"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "role": {
+        "enum": ["farmer", "buyer"],
+        "description": "Must be either 'farmer' or 'buyer'"
+      },
+      "username": {
+        "bsonType": "string",
+        "description": "Unique username used for login"
+      },
+      "email": {
+        "bsonType": "string",
+        "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "description": "Unique email address, must match valid email format"
+      },
+      "password": {
+        "bsonType": "string",
+        "description": "Hashed password using bcrypt"
+      },
+      "mobile": {
+        "bsonType": "string",
+        "description": "Contact phone number"
+      },
+      "status": {
+        "bsonType": "object",
+        "required": ["active", "hash"],
+        "properties": {
+          "active": {
+            "bsonType": "bool",
+            "description": "Whether the user account is active"
+          },
+          "hash": {
+            "bsonType": "string",
+            "description": "Hash code used for account verification"
+          }
+        }
+      },
+      "profile": {
+        "bsonType": "object",
+        "required": ["name", "address"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Full name of the user"
+          },
+          "address": {
+            "bsonType": "string",
+            "description": "Physical address"
+          },
+          "rating": {
+            "bsonType": ["int", "double"],
+            "minimum": 0,
+            "maximum": 5,
+            "description": "Rating score (applicable primarily for farmers)"
+          },
+          "picExt": {
+            "bsonType": "string",
+            "description": "File extension of profile picture"
+          },
+          "picStatus": {
+            "bsonType": "int",
+            "description": "Status code of profile picture"
+          }
+        }
+      },
+      "createdAt": {
+        "bsonType": "date",
+        "description": "Timestamp when the user account was created"
+      }
+    }
+  }
+}

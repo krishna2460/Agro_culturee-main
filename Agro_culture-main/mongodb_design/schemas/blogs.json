@@ -1,0 +1,76 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["authorId", "authorUsername", "title", "content", "likes", "comments", "createdAt"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "authorId": {
+        "bsonType": "objectId",
+        "description": "Must reference the _id of the user who authored the blog"
+      },
+      "authorUsername": {
+        "bsonType": "string",
+        "description": "Username of the author (denormalized for display)"
+      },
+      "title": {
+        "bsonType": "string",
+        "description": "Title of the blog post"
+      },
+      "content": {
+        "bsonType": "string",
+        "description": "Content of the blog post, possibly in HTML format"
+      },
+      "likes": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["userId", "username"],
+          "properties": {
+            "userId": {
+              "bsonType": "objectId",
+              "description": "References user who liked the post"
+            },
+            "username": {
+              "bsonType": "string",
+              "description": "Username of the user who liked"
+            }
+          }
+        }
+      },
+      "comments": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["_id", "username", "profilePic", "comment", "createdAt"],
+          "properties": {
+            "_id": {
+              "bsonType": "objectId"
+            },
+            "username": {
+              "bsonType": "string",
+              "description": "Username of the user who commented"
+            },
+            "profilePic": {
+              "bsonType": "string",
+              "description": "Profile picture of the commenter"
+            },
+            "comment": {
+              "bsonType": "string",
+              "description": "Comment text"
+            },
+            "createdAt": {
+              "bsonType": "date",
+              "description": "Timestamp of the comment"
+            }
+          }
+        }
+      },
+      "createdAt": {
+        "bsonType": "date",
+        "description": "Timestamp of when the blog post was created"
+      }
+    }
+  }
+}

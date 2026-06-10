@@ -1,0 +1,34 @@
+[
+  {
+    "_id": {
+      "$oid": "ed012dff3591f6929a20b212"
+    },
+    "buyerId": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "products": [
+      {
+        "productId": {
+          "$oid": "7acb7a7729c426027b475ecf"
+        },
+        "name": "Mango",
+        "price": 500.0,
+        "quantity": 1,
+        "addedAt": {
+          "$date": "2018-02-25T12:00:00.000Z"
+        }
+      },
+      {
+        "productId": {
+          "$oid": "aca5b00546113085a2eb4804"
+        },
+        "name": "Banana",
+        "price": 400.0,
+        "quantity": 1,
+        "addedAt": {
+          "$date": "2018-02-25T12:00:00.000Z"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["buyerId", "products"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "buyerId": {
+        "bsonType": "objectId",
+        "description": "Must reference the _id of the buyer owning this cart"
+      },
+      "products": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["productId", "name", "price", "quantity", "addedAt"],
+          "properties": {
+            "productId": {
+              "bsonType": "objectId",
+              "description": "References products._id"
+            },
+            "name": {
+              "bsonType": "string",
+              "description": "Name of the product (denormalized)"
+            },
+            "price": {
+              "bsonType": ["int", "double", "decimal"],
+              "minimum": 0,
+              "description": "Price per unit (denormalized)"
+            },
+            "quantity": {
+              "bsonType": "int",
+              "minimum": 1,
+              "description": "Quantity added to cart"
+            },
+            "addedAt": {
+              "bsonType": "date",
+              "description": "Timestamp when this item was added"
+            }
+          }
+        }
+      }
+    }
+  }
+}

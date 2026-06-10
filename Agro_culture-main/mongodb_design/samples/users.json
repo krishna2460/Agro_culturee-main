@@ -1,0 +1,26 @@
+[
+  {
+    "_id": {
+      "$oid": "8fc9698e2c92b89db5453dd8"
+    },
+    "role": "farmer",
+    "username": "ThePhenom",
+    "email": "kmendki98@gmail.com",
+    "password": "$2y$10$22ezmzHRa9c5ycHmVm5RpOnlT4LwFaDZar1XhmLRJQKGrcVRhPgti",
+    "mobile": "8600611198",
+    "status": {
+      "active": false,
+      "hash": "61b4a64be663682e8cb037d9719ad8cd"
+    },
+    "profile": {
+      "name": "Kaivalya Hemant Mendki",
+      "address": "abcde",
+      "rating": 0.0,
+      "picExt": "png",
+      "picStatus": 0
+    },
+    "createdAt": {
+      "$date": "2018-02-25T00:00:00.000Z"
+    }
+  }
+]
