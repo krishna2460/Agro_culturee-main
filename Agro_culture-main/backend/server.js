@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Agroculture API!' });
 });
 
+// Health check route for deploy platforms
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));

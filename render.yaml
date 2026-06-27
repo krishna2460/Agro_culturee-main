@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: agroculture-backend
+    runtime: node
+    rootDir: Agro_culture-main/backend
+    buildCommand: npm install
+    startCommand: npm start
+  - type: web
+    name: agroculture-frontend
+    runtime: static
+    rootDir: Agro_culture-main/frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        sync: false

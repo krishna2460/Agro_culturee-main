@@ -1,0 +1,8 @@
+{
+  "name": "agroculture-root",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix Agro_culture-main/backend install",
+    "start": "npm --prefix Agro_culture-main/backend start"
+  }
+}
